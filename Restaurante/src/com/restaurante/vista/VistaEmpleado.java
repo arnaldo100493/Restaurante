@@ -29,7 +29,7 @@ public class VistaEmpleado {
         int opcion = 0;
         do {
             try {
-                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "*********RESTAURANTE DE COMIDAS RAPIDAS**********\n\n\n\n\n\n1. Registrar\n\n2. Consultar\n\n3. Listar\n\n4. Modificar\n\n5. Eliminar\n\n0. Atrás\n\nSeleccione la opción deseada: "));
+                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "*********RESTAURANTE DE COMIDAS RAPIDAS**********\n\n\n\n\n\n1. Registrar\n\n2. Consultar\n\n3. Listar\n\n4. Modificar\n\n5. Eliminar\n\n6. Atrás\n\nSeleccione la opción deseada: "));
                 switch (opcion) {
                     case 0:
                         this.atras();
@@ -49,6 +49,9 @@ public class VistaEmpleado {
                     case 5:
                         this.eliminar();
                         break;
+                    case 6:
+                        this.atras();
+                        break;
                     default:
                         JOptionPane.showMessageDialog(null, "Opción Inválida", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -57,7 +60,7 @@ public class VistaEmpleado {
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Ocurrió un error", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } while (opcion != 0);
+        } while (opcion != 6);
 
     }
 
@@ -70,7 +73,7 @@ public class VistaEmpleado {
         try {
             String identificacion = JOptionPane.showInputDialog(null, "\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte la identificación del empleado: ", "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
             if (this.adminEmpleado.existe(identificacion)) {
-                JOptionPane.showMessageDialog(null, "\nIdentificación duplicada", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Identificación duplicada", "Advertencia", JOptionPane.WARNING_MESSAGE);
             } else {
                 String numeroEmpleado = JOptionPane.showInputDialog(null, "\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte el número del empleado: ", "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
                 String nombre = JOptionPane.showInputDialog(null, "\n\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte el nombre del empleado: ", "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
@@ -109,7 +112,7 @@ public class VistaEmpleado {
         for (Empleado empleado : this.adminEmpleado.listar()) {
             salida += "\n\nIdentificación: " + empleado.getIdentificacion() + "\n\nNúmero del Empleado: " + empleado.getNumeroEmpleado() + "\n\nNombre: " + empleado.getNombre() + "\n\nApellido: " + empleado.getApellido() + "\n\nDirección: " + empleado.getDireccion() + "\n\nTeléfono: " + empleado.getTelefono() + "\n\nCorreo Electrónico: " + empleado.getCorreoElectronico() + "\n\nFecha de Nacimiento: " + empleado.getFechaNacimiento() + "\n\nFecha de Registro: " + empleado.getFechaRegistro() + "\n\nSexo: " + empleado.getSexo() + "\n\nEdad: " + empleado.getEdad() + "\n\nSalario: " + empleado.getSalario();
         }
-        JOptionPane.showMessageDialog(null, "LISTADO DE CLIENTES" + "\n\n" + salida + "\n\n", "Listado de Empleados", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "LISTADO DE EMPLEADOS" + "\n\n" + salida + "\n\n", "Listado de Empleados", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void modificar() {
@@ -146,7 +149,7 @@ public class VistaEmpleado {
         String identificacion = JOptionPane.showInputDialog(null, "\n\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte la identificación del empleado: ", "Consulta de Empleados", JOptionPane.INFORMATION_MESSAGE);
         Empleado empleado = this.adminEmpleado.consultar(identificacion);
         if (empleado != null) {
-            int opcion = JOptionPane.showOptionDialog(null, "\n¿Está seguro que desea eliminar este empleado llamado: " + empleado.getNombre() + " " + empleado.getApellido() + "?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
+            int opcion = JOptionPane.showOptionDialog(null, "¿Está seguro que desea eliminar este empleado llamado: " + empleado.getNombre() + " " + empleado.getApellido() + "?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
             if (opcion != -1) {
                 if ((opcion + 1) == 1) {
                     this.adminEmpleado.eliminar(identificacion);

@@ -29,7 +29,7 @@ public class VistaCliente {
         int opcion = 0;
         do {
             try {
-                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "*********RESTAURANTE DE COMIDAS RAPIDAS**********\n\n\n\n\n\n1. Registrar\n\n2. Consultar\n\n3. Listar\n\n4. Modificar\n\n5. Eliminar\n\n0. Atrás\n\nSeleccione la opción deseada: "));
+                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "*********RESTAURANTE DE COMIDAS RAPIDAS**********\n\n\n\n\n\n1. Registrar\n\n2. Consultar\n\n3. Listar\n\n4. Modificar\n\n5. Eliminar\n\n6. Atrás\n\nSeleccione la opción deseada: "));
                 switch (opcion) {
                     case 0:
                         this.atras();
@@ -49,6 +49,9 @@ public class VistaCliente {
                     case 5:
                         this.eliminar();
                         break;
+                    case 6:
+                        this.atras();
+                        break;
                     default:
                         JOptionPane.showMessageDialog(null, "Opción Inválida", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -57,7 +60,7 @@ public class VistaCliente {
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Ocurrió un error", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } while (opcion != 0);
+        } while (opcion != 6);
 
     }
 
@@ -70,7 +73,7 @@ public class VistaCliente {
         try {
             String identificacion = JOptionPane.showInputDialog(null, "\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte la identificación del cliente: ", "Registro de Clientes", JOptionPane.INFORMATION_MESSAGE);
             if (this.adminCliente.existe(identificacion)) {
-                JOptionPane.showMessageDialog(null, "\nIdentificación duplicada", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Identificación duplicada", "Advertencia", JOptionPane.WARNING_MESSAGE);
             } else {
                 String nombre = JOptionPane.showInputDialog(null, "\n\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte el nombre del cliente: ", "Registro de Clientes", JOptionPane.INFORMATION_MESSAGE);
                 String apellido = JOptionPane.showInputDialog(null, "\n\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte el apellido del cliente: ", "Registro de Clientes", JOptionPane.INFORMATION_MESSAGE);
@@ -142,7 +145,7 @@ public class VistaCliente {
         String identificacion = JOptionPane.showInputDialog(null, "\n\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte la identificación del cliente: ", "Consulta de Clientes", JOptionPane.INFORMATION_MESSAGE);
         Cliente cliente = this.adminCliente.consultar(identificacion);
         if (cliente != null) {
-            int opcion = JOptionPane.showOptionDialog(null, "\n¿Está seguro que desea eliminar este cliente llamado: " + cliente.getNombre() + " " + cliente.getApellido() + "?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
+            int opcion = JOptionPane.showOptionDialog(null, "¿Está seguro que desea eliminar este cliente llamado: " + cliente.getNombre() + " " + cliente.getApellido() + "?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
             if (opcion != -1) {
                 if ((opcion + 1) == 1) {
                     this.adminCliente.eliminar(identificacion);
@@ -153,5 +156,4 @@ public class VistaCliente {
             JOptionPane.showMessageDialog(null, "Este cliente no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }
-
 }
