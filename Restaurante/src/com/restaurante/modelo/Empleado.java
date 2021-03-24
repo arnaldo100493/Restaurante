@@ -7,7 +7,7 @@ package com.restaurante.modelo;
 
 /**
  *
- * @author FABAME
+ * @author abarrios
  */
 public class Empleado {
 

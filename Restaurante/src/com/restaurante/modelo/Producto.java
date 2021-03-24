@@ -1,25 +1,34 @@
-package Modelo;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.restaurante.modelo;
 
+/**
+ *
+ * @author abarrios
+ */
 public class Producto {
-  
-  private String codigo;
-  private String nombre;
-  private String descripcion;
-  private String tipo;
-  private String fechaRegistro;
-  private double precio;
-  private double cantidadExistente; 
-  private double peso;
+
+    private String codigo;
+    private String nombre;
+    private String descripcion;
+    private String tipo;
+    private String fechaRegistro;
+    private double precio;
+    private double cantidadExistente;
+    private double peso;
 
     public Producto() {
-     this.codigo = "";
-     this.nombre = "";
-     this.descripcion = "";
-     this.tipo = "";
-     this.fechaRegistro = "";
-     this.precio = 0;
-     this.cantidadExistente = 0;
-     this.peso = 0;
+        this.codigo = "";
+        this.nombre = "";
+        this.descripcion = "";
+        this.tipo = "";
+        this.fechaRegistro = "";
+        this.precio = 0;
+        this.cantidadExistente = 0;
+        this.peso = 0;
     }
 
     public Producto(String codigo, String nombre, String descripcion, String tipo, String fechaRegistro, double precio, double cantidadExistente, double peso) {
@@ -32,70 +41,122 @@ public class Producto {
         this.cantidadExistente = cantidadExistente;
         this.peso = peso;
     }
-    
-    public void setCodigo(String Codigo){
-      this.codigo = Codigo;  
-    }
-    
-    public String getCodigo(){
-      return this.codigo;  
-    }
-   
-    public void setNombre(String Nombre){
-      this.nombre = Nombre;  
+
+    @Override
+    public String toString() {
+        return "Producto{" + "codigo=" + getCodigo() + ", nombre=" + getNombre() + ", descripcion=" + getDescripcion() + ", tipo=" + getTipo() + ", fechaRegistro=" + getFechaRegistro() + ", precio=" + getPrecio() + ", cantidadExistente=" + getCantidadExistente() + ", peso=" + getPeso() + '}';
     }
 
-    public String getNombre(){
-      return this.nombre;  
-    }
-    
-    public void setDescripcion(String Descripcion){
-      this.descripcion = Descripcion;  
-    }
-    
-    public String getDescripcion(){
-      return this.descripcion;  
-    }
-    
-    public void setTipo(String Tipo){
-      this.tipo = Tipo;  
+    /**
+     * @return the codigo
+     */
+    public String getCodigo() {
+        return codigo;
     }
 
-    public String getTipo(){
-      return this.tipo;  
-    }
-    
-    public void setFechaRegistro(String fechaRegistro){
-      this.fechaRegistro = fechaRegistro;  
-    }
-    
-    public String getFechaRegistro(){
-      return this.fechaRegistro;  
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-    public void setPrecio(double Precio){
-      this.precio = Precio; 
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
     }
 
-    public double getPrecio(){
-      return this.precio;  
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setCantidadExistente(double cantidadExistente){
-      this.cantidadExistente = cantidadExistente;  
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
     }
-    
-    public double getCantidadExistente(){
-      return this.cantidadExistente;  
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
-    
-    public void setPeso(double Peso){
-      this.peso = Peso;  
+
+    /**
+     * @return the tipo
+     */
+    public String getTipo() {
+        return tipo;
     }
-    
-    public double getPeso(){
-      return peso;  
+
+    /**
+     * @param tipo the tipo to set
+     */
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
- 
-    
+
+    /**
+     * @return the fechaRegistro
+     */
+    public String getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    /**
+     * @param fechaRegistro the fechaRegistro to set
+     */
+    public void setFechaRegistro(String fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+
+    /**
+     * @return the precio
+     */
+    public double getPrecio() {
+        return precio;
+    }
+
+    /**
+     * @param precio the precio to set
+     */
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    /**
+     * @return the cantidadExistente
+     */
+    public double getCantidadExistente() {
+        return cantidadExistente;
+    }
+
+    /**
+     * @param cantidadExistente the cantidadExistente to set
+     */
+    public void setCantidadExistente(double cantidadExistente) {
+        this.cantidadExistente = cantidadExistente;
+    }
+
+    /**
+     * @return the peso
+     */
+    public double getPeso() {
+        return peso;
+    }
+
+    /**
+     * @param peso the peso to set
+     */
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
 }

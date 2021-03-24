@@ -1,30 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.restaurante.modelo;
 
+/**
+ *
+ * @author abarrios
+ */
 public class Proveedor {
- 
-  private String identificacion;
-  private String nombre;
-  private String apellido;
-  private String direccion;
-  private String telefono;
-  private String correoElectronico;
-  private String fechaRegistro;
-  private String sexo;
-  private String empresa;
-  private String nitEmpresa;
+
+    private String identificacion;
+    private String nombre;
+    private String apellido;
+    private String direccion;
+    private String telefono;
+    private String correoElectronico;
+    private String fechaRegistro;
+    private String sexo;
+    private String empresa;
+    private String nitEmpresa;
 
     public Proveedor() {
-      this.identificacion = "";
-      this.nombre = "";
-      this.apellido = "";
-      this.direccion = "";
-      this.telefono = "";
-      this.correoElectronico = "";
-      this.fechaRegistro = "";
-      this.sexo = "";
-      this.empresa = "";
-      this.nitEmpresa = "";
-    
+        this.identificacion = "";
+        this.nombre = "";
+        this.apellido = "";
+        this.direccion = "";
+        this.telefono = "";
+        this.correoElectronico = "";
+        this.fechaRegistro = "";
+        this.sexo = "";
+        this.empresa = "";
+        this.nitEmpresa = "";
+
     }
 
     public Proveedor(String identificacion, String nombre, String apellido, String direccion, String telefono, String correoElectronico, String fechaRegistro, String sexo, String empresa, String nitEmpresa) {
@@ -184,7 +193,5 @@ public class Proveedor {
     public void setNitEmpresa(String nitEmpresa) {
         this.nitEmpresa = nitEmpresa;
     }
-    
-      
-    
+
 }

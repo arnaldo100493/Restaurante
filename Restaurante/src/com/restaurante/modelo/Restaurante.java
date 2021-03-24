@@ -10,7 +10,7 @@ package com.restaurante.modelo;
  * @author abarrios
  */
 public class Restaurante {
-    
+
     private String nit;
     private String nombre;
     private String telefono;
@@ -24,6 +24,11 @@ public class Restaurante {
     public Restaurante(String nit, String nombre) {
         this.nit = nit;
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurante{" + "nit=" + nit + ", nombre=" + nombre + ", telefono=" + telefono + '}';
     }
 
     /**
@@ -67,10 +72,4 @@ public class Restaurante {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
-    @Override
-    public String toString() {
-        return "Restaurante{" + "nit=" + nit + ", nombre=" + nombre + ", telefono=" + telefono + '}';
-    }
-
 }

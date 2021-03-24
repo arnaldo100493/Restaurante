@@ -1,10 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.restaurante.control;
 
 import com.restaurante.modelo.Proveedor;
 
+/**
+ *
+ * @author abarrios
+ */
 public class AdminProveedor {
 
-    private Proveedor[] listaProveedores = new Proveedor[1000];
+    private Proveedor[] listadoProveedores = new Proveedor[1000];
     private int indice = 0;
 
     public AdminProveedor() {
@@ -25,13 +34,13 @@ public class AdminProveedor {
     }
 
     public void registrar(Proveedor proveedor) {
-        this.listaProveedores[this.indice] = proveedor;
+        this.listadoProveedores[this.indice] = proveedor;
         this.indice++;
     }
 
     public boolean existe(String identificacion) {
         for (int i = 0; i < this.indice; i++) {
-            if (this.listaProveedores[i].getIdentificacion().equals(identificacion)) {
+            if (this.listadoProveedores[i].getIdentificacion().equals(identificacion)) {
                 return true;
             }
         }
@@ -40,8 +49,8 @@ public class AdminProveedor {
 
     public Proveedor consultar(String identificacion) {
         for (int i = 0; i < this.indice; i++) {
-            if (this.listaProveedores[i].getIdentificacion().equals(identificacion)) {
-                return this.listaProveedores[i];
+            if (this.listadoProveedores[i].getIdentificacion().equals(identificacion)) {
+                return this.listadoProveedores[i];
             }
         }
         return null;
@@ -50,30 +59,30 @@ public class AdminProveedor {
     public Proveedor[] listar() {
         Proveedor[] proveedoresConsultados = new Proveedor[this.indice];
         for (int i = 0; i < this.indice; i++) {
-            proveedoresConsultados[i] = this.listaProveedores[i];
+            proveedoresConsultados[i] = this.listadoProveedores[i];
         }
         return proveedoresConsultados;
     }
 
     public void modificar(Proveedor proveedor) {
         for (int i = 0; i < this.indice; i++) {
-            if (this.listaProveedores[i].getIdentificacion().equals(proveedor.getIdentificacion())) {
-                this.listaProveedores[i] = proveedor;
+            if (this.listadoProveedores[i].getIdentificacion().equals(proveedor.getIdentificacion())) {
+                this.listadoProveedores[i] = proveedor;
             }
         }
     }
 
     private void reemplazar(int p) {
         for (int i = p; i < this.indice - 1; i++) {
-            this.listaProveedores[i] = this.listaProveedores[i + 1];
+            this.listadoProveedores[i] = this.listadoProveedores[i + 1];
         }
-        this.listaProveedores[this.indice - 1] = null;
+        this.listadoProveedores[this.indice - 1] = null;
         this.indice--;
     }
 
     public void eliminar(String identificacion) {
         for (int i = 0; i < this.indice; i++) {
-            if (this.listaProveedores[i].getIdentificacion().equals(identificacion)) {
+            if (this.listadoProveedores[i].getIdentificacion().equals(identificacion)) {
                 this.reemplazar(i);
             }
         }

@@ -6,9 +6,6 @@
 package com.restaurante;
 
 import com.restaurante.vista.VistaPrincipal;
-import com.restaurante.vista.VistaCliente;
-import com.restaurante.vista.VistaEmpleado;
-import javax.swing.JOptionPane;
 
 /**
  *

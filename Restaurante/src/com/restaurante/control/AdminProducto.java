@@ -5,7 +5,7 @@
  */
 package com.restaurante.control;
 
-import Modelo.Producto;
+import com.restaurante.modelo.Producto;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 

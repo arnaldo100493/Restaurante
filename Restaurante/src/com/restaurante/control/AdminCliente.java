@@ -12,10 +12,10 @@ import com.restaurante.modelo.Cliente;
  * @author abarrios
  */
 public class AdminCliente {
-    
+
     private Cliente[] listaClientes = new Cliente[1000];
     private int indice = 0;
-    
+
     public AdminCliente() {
         Cliente cliente = new Cliente();
         cliente.setIdentificacion("1047459854");
@@ -30,16 +30,16 @@ public class AdminCliente {
         cliente.setEdad(21);
         this.registrar(cliente);
     }
-    
+
     public boolean estaVacia() {
         return this.indice == -1;
     }
-    
+
     public void registrar(Cliente cliente) {
         this.listaClientes[this.indice] = cliente;
         this.indice++;
     }
-    
+
     public boolean existe(String identificacion) {
         for (int i = 0; i < this.indice; i++) {
             if (this.listaClientes[i].getIdentificacion().equals(identificacion)) {
@@ -48,7 +48,7 @@ public class AdminCliente {
         }
         return false;
     }
-    
+
     public Cliente consultar(String identificacion) {
         Cliente cliente = null;
         for (int i = 0; i < this.indice; i++) {
@@ -58,7 +58,7 @@ public class AdminCliente {
         }
         return cliente;
     }
-    
+
     public Cliente[] listar() {
         Cliente[] clientesConsultados = new Cliente[indice];
         for (int i = 0; i < this.indice; i++) {
@@ -66,7 +66,7 @@ public class AdminCliente {
         }
         return clientesConsultados;
     }
-    
+
     public void modificar(Cliente objeto) {
         for (int i = 0; i < this.indice; i++) {
             if (this.listaClientes[i].getIdentificacion().equals(objeto.getIdentificacion())) {
@@ -74,7 +74,7 @@ public class AdminCliente {
             }
         }
     }
-    
+
     private void reemplazar(int c) {
         for (int i = c; i < this.indice - 1; i++) {
             listaClientes[i] = listaClientes[i + 1];
@@ -82,7 +82,7 @@ public class AdminCliente {
         this.listaClientes[this.indice - 1] = null;
         this.indice--;
     }
-    
+
     public void eliminar(String identificacion) {
         for (int i = 0; i < this.indice; i++) {
             if (listaClientes[i].getIdentificacion().equals(identificacion)) {
@@ -90,5 +90,4 @@ public class AdminCliente {
             }
         }
     }
-    
 }

@@ -1,7 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.restaurante.control;
 
-import Modelo.Insumo;
+import com.restaurante.modelo.Insumo;
 
+/**
+ *
+ * @author abarrios
+ */
 public class AdminInsumo {
 
     private Insumo[] listadoInsumos = new Insumo[1000];
