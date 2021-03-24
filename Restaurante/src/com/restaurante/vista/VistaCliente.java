@@ -83,9 +83,8 @@ public class VistaCliente {
                 int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "\n\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte la edad del cliente: ", "Registro de Clientes", JOptionPane.INFORMATION_MESSAGE));
                 Cliente cliente = new Cliente(identificacion, nombre, apellido, direccion, telefono, correoElectronico, fechaNacimiento, fechaRegistro, sexo, edad);
                 this.adminCliente.registrar(cliente);
+                JOptionPane.showMessageDialog(null, "Cliente registrado con éxito", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
-
-            JOptionPane.showMessageDialog(null, "Cliente registrado con éxito", "Información", JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {

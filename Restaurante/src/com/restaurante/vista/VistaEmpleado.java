@@ -85,9 +85,8 @@ public class VistaEmpleado {
                 double salario = Double.parseDouble(JOptionPane.showInputDialog(null, "\n\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte el salario del empleado:", "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE));
                 Empleado empleado = new Empleado(identificacion, numeroEmpleado, nombre, apellido, direccion, telefono, correoElectronico, fechaNacimiento, fechaRegistro, sexo, edad, salario);
                 this.adminEmpleado.registrar(empleado);
+                JOptionPane.showMessageDialog(null, "Empleado registrado con éxito", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
-
-            JOptionPane.showMessageDialog(null, "Empleado registrado con éxito", "Información", JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
