@@ -67,11 +67,11 @@ public class VistaPrincipal {
                         this.salir();
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "\nOpción no válida", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Opción no válida", "Error", JOptionPane.ERROR_MESSAGE);
                         break;
                 }
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "\nEl caracter ingresado no es válido", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
         } while (opcion != 8);
@@ -79,14 +79,14 @@ public class VistaPrincipal {
 
     private void salir() {
         try {
-            int opcion = JOptionPane.showOptionDialog(null, "\n¿Está seguro que desea salir? ", "Confirmar Salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
+            int opcion = JOptionPane.showOptionDialog(null, "¿Está seguro que desea salir? ", "Confirmar Salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
             if (opcion != -1) {
                 if ((opcion + 1) == 1) {
                     System.exit(0);
                 }
             }
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "\nError al salir", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error al salir", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

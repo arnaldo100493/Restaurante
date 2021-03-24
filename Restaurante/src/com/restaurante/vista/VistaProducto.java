@@ -84,6 +84,8 @@ public class VistaProducto {
                 this.adminProducto.registrar(producto);
                 JOptionPane.showMessageDialog(null, "Producto registrado con éxito", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error al registrar", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -102,7 +104,7 @@ public class VistaProducto {
         String salida = "";
         try {
             for (Producto listar : this.adminProducto.listar()) {
-                salida = salida + "\n\nCódigo: " + listar.getCodigo() + "\n\nNombre: " + listar.getNombre() + "\n\nDescripción: " + listar.getDescripcion() + "\n\nTipo: " + listar.getTipo() + "\n\nFecha de Registro: " + listar.getFechaRegistro() + "\n\nPrecio: " + listar.getPrecio() + "\n\nCantidad Existente: " + listar.getCantidadExistente() + "\n\nPeso: " + listar.getPeso() + "\n\n";
+                salida = salida + "\n\n\nCódigo: " + listar.getCodigo() + "\n\nNombre: " + listar.getNombre() + "\n\nDescripción: " + listar.getDescripcion() + "\n\nTipo: " + listar.getTipo() + "\n\nFecha de Registro: " + listar.getFechaRegistro() + "\n\nPrecio: " + listar.getPrecio() + "\n\nCantidad Existente: " + listar.getCantidadExistente() + "\n\nPeso: " + listar.getPeso() + "\n\n";
                 JOptionPane.showMessageDialog(null, "LISTADO DE PRODUCTOS" + "\n\n" + salida, "Listado de Productos", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (NullPointerException ex) {

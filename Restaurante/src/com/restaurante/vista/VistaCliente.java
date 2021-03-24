@@ -92,7 +92,7 @@ public class VistaCliente {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Ocurrió un error " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al registrar" + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -108,10 +108,14 @@ public class VistaCliente {
 
     private void listar() {
         String salida = "";
-        for (Cliente cliente : this.adminCliente.listar()) {
-            salida += "\n\n\nIdentificación: " + cliente.getIdentificacion() + "\n\nNombre: " + cliente.getNombre() + "\n\nApellido: " + cliente.getApellido() + "\n\nDirección: " + cliente.getDireccion() + "\n\nTeléfono: " + cliente.getTelefono() + "\n\nCorreo Electrónico: " + cliente.getCorreoElectronico() + "\n\nFecha de Nacimiento: " + cliente.getFechaNacimiento() + "\n\nFecha de Registro: " + cliente.getFechaRegistro() + "\n\nSexo: " + cliente.getSexo() + "\n\nEdad: " + cliente.getEdad();
+        try {
+            for (Cliente cliente : this.adminCliente.listar()) {
+                salida += "\n\n\nIdentificación: " + cliente.getIdentificacion() + "\n\nNombre: " + cliente.getNombre() + "\n\nApellido: " + cliente.getApellido() + "\n\nDirección: " + cliente.getDireccion() + "\n\nTeléfono: " + cliente.getTelefono() + "\n\nCorreo Electrónico: " + cliente.getCorreoElectronico() + "\n\nFecha de Nacimiento: " + cliente.getFechaNacimiento() + "\n\nFecha de Registro: " + cliente.getFechaRegistro() + "\n\nSexo: " + cliente.getSexo() + "\n\nEdad: " + cliente.getEdad();
+            }
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Error al listar", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "LISTADO DE CLIENTES" + "\n\n" + salida + "\n\n", "Listado de Clientes", JOptionPane.INFORMATION_MESSAGE);
         }
-        JOptionPane.showMessageDialog(null, "LISTADO DE CLIENTES" + "\n\n" + salida + "\n\n", "Listado de Clientes", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void modificar() {
@@ -138,7 +142,7 @@ public class VistaCliente {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Ocurrió un error " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al modificar" + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 

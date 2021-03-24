@@ -94,7 +94,7 @@ public class VistaEmpleado {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Ocurrió un error " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al registrar" + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -111,7 +111,7 @@ public class VistaEmpleado {
     private void listar() {
         String salida = "";
         for (Empleado empleado : this.adminEmpleado.listar()) {
-            salida += "\n\nIdentificación: " + empleado.getIdentificacion() + "\n\nNúmero del Empleado: " + empleado.getNumeroEmpleado() + "\n\nNombre: " + empleado.getNombre() + "\n\nApellido: " + empleado.getApellido() + "\n\nDirección: " + empleado.getDireccion() + "\n\nTeléfono: " + empleado.getTelefono() + "\n\nCorreo Electrónico: " + empleado.getCorreoElectronico() + "\n\nFecha de Nacimiento: " + empleado.getFechaNacimiento() + "\n\nFecha de Registro: " + empleado.getFechaRegistro() + "\n\nSexo: " + empleado.getSexo() + "\n\nEdad: " + empleado.getEdad() + "\n\nSalario: " + empleado.getSalario();
+            salida += "\n\n\nIdentificación: " + empleado.getIdentificacion() + "\n\nNúmero del Empleado: " + empleado.getNumeroEmpleado() + "\n\nNombre: " + empleado.getNombre() + "\n\nApellido: " + empleado.getApellido() + "\n\nDirección: " + empleado.getDireccion() + "\n\nTeléfono: " + empleado.getTelefono() + "\n\nCorreo Electrónico: " + empleado.getCorreoElectronico() + "\n\nFecha de Nacimiento: " + empleado.getFechaNacimiento() + "\n\nFecha de Registro: " + empleado.getFechaRegistro() + "\n\nSexo: " + empleado.getSexo() + "\n\nEdad: " + empleado.getEdad() + "\n\nSalario: " + empleado.getSalario();
         }
         JOptionPane.showMessageDialog(null, "LISTADO DE EMPLEADOS" + "\n\n" + salida + "\n\n", "Listado de Empleados", JOptionPane.INFORMATION_MESSAGE);
     }
@@ -142,7 +142,7 @@ public class VistaEmpleado {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Ocurrió un error " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al modificar" + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
