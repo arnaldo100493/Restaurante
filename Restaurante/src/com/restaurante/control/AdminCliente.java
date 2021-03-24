@@ -13,7 +13,7 @@ import com.restaurante.modelo.Cliente;
  */
 public class AdminCliente {
 
-    private Cliente[] listaClientes = new Cliente[1000];
+    private Cliente[] listadoClientes = new Cliente[1000];
     private int indice = 0;
 
     public AdminCliente() {
@@ -36,14 +36,14 @@ public class AdminCliente {
     }
 
     public void registrar(Cliente cliente) {
-        this.listaClientes[this.indice] = cliente;
+        this.listadoClientes[this.indice] = cliente;
         this.indice++;
     }
 
     public boolean existe(String identificacion) {
         boolean existe = false;
         for (int i = 0; i < this.indice; i++) {
-            if (this.listaClientes[i].getIdentificacion().equals(identificacion)) {
+            if (this.listadoClientes[i].getIdentificacion().equals(identificacion)) {
                 existe = true;
             }
         }
@@ -53,8 +53,8 @@ public class AdminCliente {
     public Cliente consultar(String identificacion) {
         Cliente cliente = null;
         for (int i = 0; i < this.indice; i++) {
-            if (this.listaClientes[i].getIdentificacion().equals(identificacion)) {
-                cliente = this.listaClientes[i];
+            if (this.listadoClientes[i].getIdentificacion().equals(identificacion)) {
+                cliente = this.listadoClientes[i];
             }
         }
         return cliente;
@@ -63,30 +63,30 @@ public class AdminCliente {
     public Cliente[] listar() {
         Cliente[] clientesConsultados = new Cliente[indice];
         for (int i = 0; i < this.indice; i++) {
-            clientesConsultados[i] = this.listaClientes[i];
+            clientesConsultados[i] = this.listadoClientes[i];
         }
         return clientesConsultados;
     }
 
     public void modificar(Cliente objeto) {
         for (int i = 0; i < this.indice; i++) {
-            if (this.listaClientes[i].getIdentificacion().equals(objeto.getIdentificacion())) {
-                this.listaClientes[i] = objeto;
+            if (this.listadoClientes[i].getIdentificacion().equals(objeto.getIdentificacion())) {
+                this.listadoClientes[i] = objeto;
             }
         }
     }
 
     private void reemplazar(int c) {
         for (int i = c; i < this.indice - 1; i++) {
-            listaClientes[i] = listaClientes[i + 1];
+            listadoClientes[i] = listadoClientes[i + 1];
         }
-        this.listaClientes[this.indice - 1] = null;
+        this.listadoClientes[this.indice - 1] = null;
         this.indice--;
     }
 
     public void eliminar(String identificacion) {
         for (int i = 0; i < this.indice; i++) {
-            if (listaClientes[i].getIdentificacion().equals(identificacion)) {
+            if (listadoClientes[i].getIdentificacion().equals(identificacion)) {
                 reemplazar(i);
             }
         }
