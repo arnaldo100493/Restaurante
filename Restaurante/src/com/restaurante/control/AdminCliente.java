@@ -87,7 +87,7 @@ public class AdminCliente {
     public void eliminar(String identificacion) {
         for (int i = 0; i < this.indice; i++) {
             if (listadoClientes[i].getIdentificacion().equals(identificacion)) {
-                reemplazar(i);
+                this.reemplazar(i);
             }
         }
     }
