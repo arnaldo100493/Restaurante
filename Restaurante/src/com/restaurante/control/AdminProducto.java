@@ -42,12 +42,13 @@ public class AdminProducto {
     }
 
     public boolean existe(String codigo) {
+        boolean existe = false;
         for (int i = 0; i < this.indice; i++) {
             if (this.listadoProductos[i].getCodigo().equals(codigo)) {
-                return true;
+                existe = true;
             }
         }
-        return false;
+        return existe;
     }
 
     public Producto consultar(String codigo) {

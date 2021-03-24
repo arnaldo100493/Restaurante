@@ -41,12 +41,13 @@ public class AdminInsumo {
     }
 
     public boolean existe(String codigo) {
+        boolean existe = false;
         for (int i = 0; i < this.indice; i++) {
             if (this.listadoInsumos[i].getCodigo().equals(codigo)) {
-                return true;
+                existe = true;
             }
         }
-        return false;
+        return existe;
     }
 
     public Insumo consultar(String codigo) {

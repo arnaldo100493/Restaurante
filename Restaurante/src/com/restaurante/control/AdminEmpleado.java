@@ -43,12 +43,13 @@ public class AdminEmpleado {
     }
 
     public boolean existe(String identificacion) {
+        boolean existe = false;
         for (int i = 0; i < this.indice; i++) {
             if (this.listadoEmpleados[i].getIdentificacion().equals(identificacion)) {
-                return true;
+                existe = true;
             }
         }
-        return false;
+        return existe;
     }
 
     public Empleado consultar(String identificacion) {

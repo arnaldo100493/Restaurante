@@ -39,12 +39,13 @@ public class AdminProveedor {
     }
 
     public boolean existe(String identificacion) {
+        boolean existe = false;
         for (int i = 0; i < this.indice; i++) {
             if (this.listadoProveedores[i].getIdentificacion().equals(identificacion)) {
-                return true;
+                existe = true;
             }
         }
-        return false;
+        return existe;
     }
 
     public Proveedor consultar(String identificacion) {
