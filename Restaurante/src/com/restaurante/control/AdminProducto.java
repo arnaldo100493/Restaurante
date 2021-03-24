@@ -51,12 +51,13 @@ public class AdminProducto {
     }
 
     public Producto consultar(String codigo) {
+        Producto producto = null;
         for (int i = 0; i < this.indice; i++) {
             if (this.listadoProductos[i].getCodigo().equals(codigo)) {
-                return this.listadoProductos[i];
+                producto = this.listadoProductos[i];
             }
         }
-        return null;
+        return producto;
     }
 
     public Producto[] listar() {
