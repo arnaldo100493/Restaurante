@@ -45,31 +45,31 @@ public class VistaPrincipal {
                         break;
 
                     case 1:
-                        vistaProducto.mostraMenuGestionarProductos();
+                        this.vistaProducto.mostraMenuGestionarProductos();
                         break;
 
                     case 2:
-                        vistaCliente.mostrarMenuGestionarClientes();
+                        this.vistaCliente.mostrarMenuGestionarClientes();
                         break;
 
                     case 3:
-                        vistaEmpleado.mostrarMenuGestionarEmpleados();
+                        this.vistaEmpleado.mostrarMenuGestionarEmpleados();
                         break;
 
                     case 4:
-                        vistaProveedor.mostrarMenuGestionarProveedores();
+                        this.vistaProveedor.mostrarMenuGestionarProveedores();
                         break;
 
                     case 5:
-                        vistaInsumo.mostrarMenuGestionarInsumos();
+                        this.vistaInsumo.mostrarMenuGestionarInsumos();
                         break;
 
                     case 6:
-                        vistaVenta.mostrarMenuGestionarVentas();
+                        this.vistaVenta.mostrarMenuGestionarVentas();
                         break;
 
                     case 7:
-                        vistaDetalleVenta.mostrarMenuGestionarDetallesVentas();
+                        this.vistaDetalleVenta.mostrarMenuGestionarDetallesVentas();
                         break;
 
                     case 8:
