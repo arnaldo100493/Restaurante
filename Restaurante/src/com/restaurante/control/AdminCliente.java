@@ -61,7 +61,7 @@ public class AdminCliente {
     }
 
     public Cliente[] listar() {
-        Cliente[] clientesConsultados = new Cliente[indice];
+        Cliente[] clientesConsultados = new Cliente[this.indice];
         for (int i = 0; i < this.indice; i++) {
             clientesConsultados[i] = this.listadoClientes[i];
         }
