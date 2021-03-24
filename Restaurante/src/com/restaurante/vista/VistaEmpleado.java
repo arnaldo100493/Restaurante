@@ -54,6 +54,7 @@ public class VistaEmpleado {
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Opción Inválida", "Error", JOptionPane.ERROR_MESSAGE);
+                        break;
                 }
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Ha ingresado un caractér NO numérico", "Error", JOptionPane.ERROR_MESSAGE);

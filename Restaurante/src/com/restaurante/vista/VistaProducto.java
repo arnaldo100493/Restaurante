@@ -31,7 +31,6 @@ public class VistaProducto {
             try {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nGestión de Productos\n\n1. Registrar\n\n2. Consultar\n\n3. Listar\n\n4. Modificar\n\n5. Eliminar\n\n6. Atrás\n\nDigíte Opción:", "Restaurante", JOptionPane.INFORMATION_MESSAGE));
                 switch (opcion) {
-
                     case 0:
                         this.atras();
                         break;

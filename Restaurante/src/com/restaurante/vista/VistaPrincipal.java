@@ -39,43 +39,33 @@ public class VistaPrincipal {
             try {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nMenú Principal\n\n1. Gestión de Productos\n\n2. Gestión de Clientes\n\n3. Gestión de Empleados\n\n4. Gestión de Proveedores\n\n5. Gestión de Insumos\n\n6. Gestión de Ventas\n\n7. Gestión de Detalles Ventas\n\n8. Salir\n\nDigite opción:", "Restaurante", JOptionPane.INFORMATION_MESSAGE));
                 switch (opcion) {
-
                     case 0:
                         this.salir();
                         break;
-
                     case 1:
                         this.vistaProducto.mostraMenuGestionarProductos();
                         break;
-
                     case 2:
                         this.vistaCliente.mostrarMenuGestionarClientes();
                         break;
-
                     case 3:
                         this.vistaEmpleado.mostrarMenuGestionarEmpleados();
                         break;
-
                     case 4:
                         this.vistaProveedor.mostrarMenuGestionarProveedores();
                         break;
-
                     case 5:
                         this.vistaInsumo.mostrarMenuGestionarInsumos();
                         break;
-
                     case 6:
                         this.vistaVenta.mostrarMenuGestionarVentas();
                         break;
-
                     case 7:
                         this.vistaDetalleVenta.mostrarMenuGestionarDetallesVentas();
                         break;
-
                     case 8:
                         this.salir();
                         break;
-
                     default:
                         JOptionPane.showMessageDialog(null, "\nOpción no válida", "Error", JOptionPane.ERROR_MESSAGE);
                         break;
