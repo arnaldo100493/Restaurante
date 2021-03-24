@@ -73,16 +73,7 @@ public class VistaPrincipal {
                         break;
 
                     case 8:
-                        try {
-                            int auxiliar = JOptionPane.showOptionDialog(null, "\n¿Está seguro que desea salir? ", "Confirmar Salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
-                            if (auxiliar != -1) {
-                                if ((auxiliar + 1) == 1) {
-                                    System.exit(0);
-                                }
-                            }
-                        } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(null, "\nError al salir", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
+                        this.salir();
                         break;
 
                     default:
@@ -97,7 +88,15 @@ public class VistaPrincipal {
     }
 
     private void salir() {
-        System.exit(0);
+        try {
+            int opcion = JOptionPane.showOptionDialog(null, "\n¿Está seguro que desea salir? ", "Confirmar Salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
+            if (opcion != -1) {
+                if ((opcion + 1) == 1) {
+                    System.exit(0);
+                }
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "\nError al salir", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
-
 }
