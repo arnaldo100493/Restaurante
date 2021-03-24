@@ -1,7 +1,7 @@
 package Modelo;
 
-public class Producto {
-  
+public class Insumo {
+
   private String codigo;
   private String nombre;
   private String descripcion;
@@ -10,19 +10,24 @@ public class Producto {
   private double precio;
   private double cantidadExistente; 
   private double peso;
-
-    public Producto() {
-     this.codigo = "";
-     this.nombre = "";
-     this.descripcion = "";
-     this.tipo = "";
-     this.fechaRegistro = "";
-     this.precio = 0;
-     this.cantidadExistente = 0;
-     this.peso = 0;
+  private double cantidadMinima;
+  private double cantidadMaxima;
+  
+    public Insumo() {
+      this.codigo = "";
+      this.nombre = "";
+      this.descripcion = "";
+      this.tipo = "";
+      this.fechaRegistro = "";
+      this.precio = 0;
+      this.cantidadExistente = 0;
+      this.peso = 0;
+      this.cantidadMinima = 0;
+      this.cantidadMaxima = 0;
+    
     }
 
-    public Producto(String codigo, String nombre, String descripcion, String tipo, String fechaRegistro, double precio, double cantidadExistente, double peso) {
+    public Insumo(String codigo, String nombre, String descripcion, String tipo, String fechaRegistro, double precio, double cantidadExistente, double peso, double cantidadMinima, double cantidadMaxima) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -31,6 +36,8 @@ public class Producto {
         this.precio = precio;
         this.cantidadExistente = cantidadExistente;
         this.peso = peso;
+        this.cantidadMinima = cantidadMinima;
+        this.cantidadMaxima = cantidadMaxima;
     }
     
     public void setCodigo(String Codigo){
@@ -96,6 +103,21 @@ public class Producto {
     public double getPeso(){
       return peso;  
     }
- 
+    
+  public void setCantidadMinima(double cantidadMinima){
+    this.cantidadMinima = cantidadMinima;  
+  }
+  
+  public double getCantidadMinima(){
+    return this.cantidadMinima;  
+  }
+  
+  public void setCantidadMaxima(double cantidadMaxima){
+    this.cantidadMaxima = cantidadMaxima;  
+  }
+  
+  public double getCantidadMaxima(){
+    return this.cantidadMaxima; 
+  }
     
 }

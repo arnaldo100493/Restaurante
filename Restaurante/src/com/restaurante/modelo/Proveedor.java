@@ -1,56 +1,48 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.restaurante.modelo;
 
-/**
- *
- * @author abarrios
- */
-public class Cliente {
+public class Proveedor {
+ 
+  private String identificacion;
+  private String nombre;
+  private String apellido;
+  private String direccion;
+  private String telefono;
+  private String correoElectronico;
+  private String fechaRegistro;
+  private String sexo;
+  private String empresa;
+  private String nitEmpresa;
 
-    private String identificacion;
-    private String nombre;
-    private String apellido;
-    private String direccion;
-    private String telefono;
-    private String correoElectronico;
-    private String fechaNacimiento;
-    private String fechaRegistro;
-    private String sexo;
-    private int edad;
-
-    public Cliente() {
-        this.identificacion = "";
-        this.nombre = "";
-        this.apellido = "";
-        this.direccion = "";
-        this.telefono = "";
-        this.correoElectronico = "";
-        this.fechaNacimiento = "";
-        this.fechaRegistro = "";
-        this.sexo = "";
-        this.edad = 0;
+    public Proveedor() {
+      this.identificacion = "";
+      this.nombre = "";
+      this.apellido = "";
+      this.direccion = "";
+      this.telefono = "";
+      this.correoElectronico = "";
+      this.fechaRegistro = "";
+      this.sexo = "";
+      this.empresa = "";
+      this.nitEmpresa = "";
+    
     }
 
-    public Cliente(String identificacion, String nombre, String apellido, String direccion, String telefono, String correoElectronico, String fechaNacimiento, String fechaRegistro, String sexo, int edad) {
+    public Proveedor(String identificacion, String nombre, String apellido, String direccion, String telefono, String correoElectronico, String fechaRegistro, String sexo, String empresa, String nitEmpresa) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
-        this.fechaNacimiento = fechaNacimiento;
         this.fechaRegistro = fechaRegistro;
         this.sexo = sexo;
-        this.edad = edad;
+        this.empresa = empresa;
+        this.nitEmpresa = nitEmpresa;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "identificacion=" + getIdentificacion() + ", nombre=" + getNombre() + ", apellido=" + getApellido() + ", direccion=" + getDireccion() + ", telefono=" + getTelefono() + ", correoElectronico=" + getCorreoElectronico() + ", fechaNacimiento=" + getFechaNacimiento() + ", fechaRegistro=" + getFechaRegistro() + ", sexo=" + getSexo() + ", edad=" + getEdad() + '}';
+        return "Proveedor{" + "identificacion=" + getIdentificacion() + ", nombre=" + getNombre() + ", apellido=" + getApellido() + ", direccion=" + getDireccion() + ", telefono=" + getTelefono() + ", correoElectronico=" + getCorreoElectronico() + ", fechaRegistro=" + getFechaRegistro() + ", sexo=" + getSexo() + ", empresa=" + getEmpresa() + ", nitEmpresa=" + getNitEmpresa() + '}';
     }
 
     /**
@@ -138,20 +130,6 @@ public class Cliente {
     }
 
     /**
-     * @return the fechaNacimiento
-     */
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    /**
-     * @param fechaNacimiento the fechaNacimiento to set
-     */
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    /**
      * @return the fechaRegistro
      */
     public String getFechaRegistro() {
@@ -180,16 +158,33 @@ public class Cliente {
     }
 
     /**
-     * @return the edad
+     * @return the empresa
      */
-    public int getEdad() {
-        return edad;
+    public String getEmpresa() {
+        return empresa;
     }
 
     /**
-     * @param edad the edad to set
+     * @param empresa the empresa to set
      */
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
+
+    /**
+     * @return the nitEmpresa
+     */
+    public String getNitEmpresa() {
+        return nitEmpresa;
+    }
+
+    /**
+     * @param nitEmpresa the nitEmpresa to set
+     */
+    public void setNitEmpresa(String nitEmpresa) {
+        this.nitEmpresa = nitEmpresa;
+    }
+    
+      
+    
 }

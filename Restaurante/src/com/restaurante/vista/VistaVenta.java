@@ -15,4 +15,8 @@ public class VistaVenta {
 
     }
 
+    public void mostrarMenuGestionarVentas() {
+
+    }
+
 }

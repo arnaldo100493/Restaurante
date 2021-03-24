@@ -18,23 +18,37 @@ public class AdminEmpleado {
 
     public AdminEmpleado() {
         this.listadoEmpleados = new Empleado[1000];
-        Empleado e1 = new Empleado();
-        e1.setIdentificacion("1047459854");
-        e1.setNumeroEmpleado("159318");
-        e1.setNombre("Arnaldo Andrés");
-        e1.setApellido("Barrios Mena");
-        e1.setEdad(27);
-        e1.setSalario(4.6);
-        this.agregar(e1);
+        Empleado empleado = new Empleado();
+        empleado.setIdentificacion("1047459854");
+        empleado.setNombre("Arnaldo Andres");
+        empleado.setApellido("Barrios Mena");
+        empleado.setDireccion("Urb. Buena Vista MzA L20");
+        empleado.setTelefono("6627568");
+        empleado.setCorreoElectronico("cyberarnaldo04@hotmail.com");
+        empleado.setFechaNacimiento("10/04/1993");
+        empleado.setFechaRegistro("07/03/2014");
+        empleado.setSexo("Masculino");
+        empleado.setEdad(21);
+        empleado.setSalario(4.6);
+        this.registrar(empleado);
     }
 
     public boolean estaVacia() {
         return this.indice == -1;
     }
 
-    public void agregar(Empleado empleado) {
+    public void registrar(Empleado empleado) {
         this.listadoEmpleados[this.indice] = empleado;
         this.indice++;
+    }
+
+    public boolean existe(String identificacion) {
+        for (int i = 0; i < this.indice; i++) {
+            if (this.listadoEmpleados[i].getIdentificacion().equals(identificacion)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Empleado consultar(String identificacion) {
@@ -63,18 +77,18 @@ public class AdminEmpleado {
         }
     }
 
-    private void reemplazar(int in) {
-        for (int i = in; i < this.indice - 1; i++) {
+    private void reemplazar(int e) {
+        for (int i = e; i < this.indice - 1; i++) {
             this.listadoEmpleados[i] = this.listadoEmpleados[i + 1];
         }
         this.listadoEmpleados[this.indice - 1] = null;
         this.indice--;
     }
-    
-    public void eliminar(String identificacion){
+
+    public void eliminar(String identificacion) {
         for (int i = 0; i < this.indice; i++) {
-            if(this.listadoEmpleados[i].getIdentificacion().equals(identificacion)){
-              this.reemplazar(i);
+            if (this.listadoEmpleados[i].getIdentificacion().equals(identificacion)) {
+                this.reemplazar(i);
             }
         }
     }
