@@ -98,9 +98,9 @@ public class VistaCliente {
 
     private void consultar() {
         String identificacion = JOptionPane.showInputDialog(null, "\n\n**********PROGRAMA PARA EL CONTROL DE VENTAS RESTAURANTE**********\n\nDigíte la identificación del empleado: ", "Consulta de Empleados", JOptionPane.INFORMATION_MESSAGE);
-        Cliente empleado = this.adminCliente.consultar(identificacion);
-        if (empleado != null) {
-            JOptionPane.showMessageDialog(null, "Datos del Cliente:\n\n\n\nIdentificación: " + empleado.getIdentificacion() + "\n\nNombre: " + empleado.getNombre() + "\n\nApellido: " + empleado.getApellido() + "\n\nDirección: " + empleado.getDireccion() + "\n\nTeléfono: " + empleado.getTelefono() + "\n\nCorreo Electrónico: " + empleado.getCorreoElectronico() + "\n\nFecha de Nacimiento: " + empleado.getFechaNacimiento() + "\n\nFecha de Registro: " + empleado.getFechaRegistro() + "\n\nSexo: " + empleado.getSexo() + "\n\nEdad: " + empleado.getEdad(), "Consulta de Clientes", JOptionPane.INFORMATION_MESSAGE);
+        Cliente cliente = this.adminCliente.consultar(identificacion);
+        if (cliente != null) {
+            JOptionPane.showMessageDialog(null, "Datos del Cliente:\n\n\n\nIdentificación: " + cliente.getIdentificacion() + "\n\nNombre: " + cliente.getNombre() + "\n\nApellido: " + cliente.getApellido() + "\n\nDirección: " + cliente.getDireccion() + "\n\nTeléfono: " + cliente.getTelefono() + "\n\nCorreo Electrónico: " + cliente.getCorreoElectronico() + "\n\nFecha de Nacimiento: " + cliente.getFechaNacimiento() + "\n\nFecha de Registro: " + cliente.getFechaRegistro() + "\n\nSexo: " + cliente.getSexo() + "\n\nEdad: " + cliente.getEdad(), "Consulta de Clientes", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Este cliente no existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
